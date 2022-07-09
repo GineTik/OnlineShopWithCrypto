@@ -8,6 +8,24 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Include="wwwroot\styles\css\style.css.map" />
+    <None Include="wwwroot\styles\css\style.min.css.map" />
+    <None Include="wwwroot\styles\scss\header\_header.scss" />
+    <None Include="wwwroot\styles\scss\header\_nav.scss" />
+    <None Include="wwwroot\styles\scss\main\_main.scss" />
+    <None Include="wwwroot\styles\scss\main\_product.scss" />
+    <None Include="wwwroot\styles\scss\main\_sidebar.scss" />
+    <None Include="wwwroot\styles\scss\style.scss" />
+    <None Include="wwwroot\styles\scss\_buttons.scss" />
+    <None Include="wwwroot\styles\scss\_colors.scss" />
+    <None Include="wwwroot\styles\scss\_default.scss" />
+    <None Include="wwwroot\styles\scss\_fonts.scss" />
+    <None Include="wwwroot\styles\scss\_form.scss" />
+    <None Include="wwwroot\styles\scss\_reset.scss" />
+    <None Include="wwwroot\styles\scss\_text.scss" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="5.0.10" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="5.0.10" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="5.0.10" />

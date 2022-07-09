@@ -1,0 +1,466 @@
+@charset "UTF-8";
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+button {
+  border: 0;
+}
+
+@font-face {
+  font-family: "Gilroy";
+  /* Имя шрифта */
+  src: url("../../fonts/Gilroy/Gilroy-Regular.eot") format("eot"), url("../../fonts/Gilroy/Gilroy-Regular.ttf") format("ttf"), url("../../fonts/Gilroy/Gilroy-Regular.woff") format("woff"), url("../../fonts/Gilroy/Gilroy-Regular.woff2") format("woff2");
+  /* Путь к файлу со шрифтом */
+  font-weight: regular;
+  font-style: normal;
+}
+@font-face {
+  font-family: Gilroy;
+  /* Имя шрифта */
+  src: url(../../fonts/Gilroy/Gilroy-Bold.eot) format("eot"), url(../../fonts/Gilroy/Gilroy-Bold.ttf) format("ttf"), url(../../fonts/Gilroy/Gilroy-Bold.woff) format("woff"), url(../../fonts/Gilroy/Gilroy-Bold.woff2) format("woff2");
+  /* Путь к файлу со шрифтом */
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: Gilroy;
+  /* Имя шрифта */
+  src: url(../../fonts/Gilroy/Gilroy-Medium.eot) format("eot"), url(../../fonts/Gilroy/Gilroy-Medium.ttf) format("ttf"), url(../../fonts/Gilroy/Gilroy-Medium.woff) format("woff"), url(../../fonts/Gilroy/Gilroy-Medium.woff2) format("woff2");
+  /* Путь к файлу со шрифтом */
+  font-weight: Medium;
+  font-style: normal;
+}
+* {
+  box-sizing: border-box;
+  font-family: Gilroy;
+  color: var(--light);
+}
+
+.page {
+  background-color: var(--dark);
+}
+
+.container {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+
+.title {
+  border-left: 3px solid var(--green);
+  color: var(--light);
+  padding-left: 10px;
+  margin-left: 7px;
+}
+
+h1.title {
+  font-size: 2rem;
+  margin-left: 30px;
+}
+
+h2.title {
+  font-size: 1.4rem;
+}
+
+h3.title {
+  font-size: 1rem;
+}
+
+.hint {
+  color: var(--gray);
+  font-size: 0.9rem;
+}
+
+[class*=button] {
+  padding: 17px 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+  font-size: 1rem;
+}
+
+[class*=button]:hover {
+  transform: scale(1.05);
+}
+
+.button--green {
+  background: var(--green-linear-gradient);
+  color: var(--light);
+}
+
+.input, [class*=input-] {
+  background-color: var(--light-dark);
+  padding: 14px;
+  border-radius: 10px;
+  border: 0;
+  outline: 0;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.input::-moz-placeholder, [class*=input-]::-moz-placeholder {
+  color: var(--gray);
+}
+
+.input:-ms-input-placeholder, [class*=input-]:-ms-input-placeholder {
+  color: var(--gray);
+}
+
+.input::placeholder, [class*=input-]::placeholder {
+  color: var(--gray);
+}
+
+.input--small {
+  padding: 6px 10px;
+  width: 70px;
+}
+
+.form {
+  width: 400px;
+  margin: 0 auto;
+}
+
+.form .input {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.form button {
+  width: 100%;
+}
+
+.nav {
+  padding: 0 80px;
+  border-bottom: 1px solid var(--light-dark);
+  display: flex;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+}
+
+.nav__link {
+  color: var(--gray);
+  text-decoration: none;
+  margin-right: 50px;
+  height: 100%;
+  cursor: pointer;
+  padding: 28px 0;
+}
+
+.nav__link--select {
+  color: var(--light);
+  font-weight: 500;
+  border-bottom: 3px solid var(--green);
+}
+
+.nav__link:hover {
+  color: var(--light);
+}
+
+.header {
+  height: 99px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--light-dark);
+  padding: 0 98px 0 70px;
+}
+
+.logo {
+  font-family: Gilroy;
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: var(--light);
+}
+
+.header__search {
+  margin: 0 30px 0 72px;
+}
+
+.search {
+  height: 52px;
+  background-color: var(--light-dark);
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 4px;
+}
+
+.search__input {
+  width: 400px;
+  height: 100%;
+  background-color: transparent;
+  border: 0;
+  outline: 0;
+  color: var(--light);
+  font-size: 1.05rem;
+}
+
+.search__input::-moz-placeholder {
+  color: var(--gray);
+}
+
+.search__input:-ms-input-placeholder {
+  color: var(--gray);
+}
+
+.search__input::placeholder {
+  color: var(--gray);
+}
+
+.search__icon,
+.search__icon-search {
+  color: var(--gray);
+  font-size: 1.5rem;
+  margin: 10px;
+}
+
+.search__icon-search {
+  color: var(--light);
+}
+
+.contacts {
+  display: flex;
+  align-items: center;
+}
+
+.contacts__type {
+  color: var(--gray);
+  font-size: 0.8rem;
+}
+
+.contacts__data {
+  color: var(--light);
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.contacts__inner {
+  display: flex;
+  flex-direction: column;
+}
+
+.contacts__icon {
+  color: var(--light);
+  font-size: 1.3rem;
+  position: relative;
+  contain: none;
+  margin-right: 18px;
+}
+
+.contacts__icon::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--green-linear-gradient);
+  z-index: -1;
+}
+
+.basket {
+  margin-left: auto;
+}
+
+.basket__icon {
+  font-size: 1.5rem;
+  margin-right: 10px;
+}
+
+.auth {
+  border-left: 3px solid var(--light-dark);
+  padding-left: 15px;
+  margin-left: 15px;
+  display: flex;
+  align-items: center;
+}
+
+.auth__icon {
+  margin-right: 10px;
+  color: var(--gray-linear-gradient);
+  font-size: 1.4rem;
+}
+
+.auth__link {
+  text-decoration: none;
+  width: 100%;
+  display: inline-block;
+  color: var(--gray);
+  margin: 2px 0;
+}
+
+.auth__link:hover {
+  color: var(--light);
+}
+
+.sidebar {
+  border-radius: 10px;
+  padding: 20px;
+  width: 450px;
+}
+
+.sidebar__title:not(:first-child) {
+  margin-top: 50px;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 20px;
+  margin-left: -3px;
+}
+
+.tags__item {
+  padding: 5px 10px;
+  border: 2px solid var(--light-dark);
+  border-radius: 10px;
+  margin: 3px;
+  cursor: pointer;
+  font-weight: 400;
+  color: var(--gray);
+}
+
+.tags__item--selected {
+  border-color: var(--green);
+  color: var(--light);
+}
+
+.range__line {
+  width: 100%;
+  height: 3px;
+  background: var(--light-dark);
+}
+
+.sidebar__filter-price {
+  margin-top: 20px;
+}
+
+.filter-price__min, .filter-price__max {
+  font-size: 1rem;
+  width: 100px;
+  margin: 0 5px;
+}
+
+.filter-price__hint {
+  display: inline-block;
+  margin-top: 10px;
+}
+
+.main__product {
+  width: 30%;
+  max-width: 329px;
+  margin: 10px;
+}
+
+.product {
+  background-color: var(--light-dark);
+  border-radius: 10px;
+  padding: 14px 16px 18px 20px;
+}
+
+.product__title {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.product__tags {
+  color: var(--gray);
+  font-size: 0.9rem;
+  margin-top: 10px;
+}
+
+.product__footer {
+  margin-top: 15px;
+  display: flex;
+  align-items: center;
+}
+
+.product__price {
+  font-size: 1.25rem;
+}
+
+.product__basket {
+  padding: 13px 19px;
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: top;
+  margin-top: 50px;
+}
+
+.main__content {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+:root {
+  --light-dark-linear-gradient: linear-gradient(to left, #494544, #504B4A);
+  --light-dark: #504B4A;
+  --dark: #403C3B;
+  --green: #618967;
+  --green-linear-gradient: linear-gradient(to left, #618967, #72A479);
+  --gray: #CFCFCF;
+  --light: #ffffff;
+}/*# sourceMappingURL=style.css.map */

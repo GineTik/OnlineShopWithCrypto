@@ -1,0 +1,26 @@
+.nav {
+    padding: 0 80px;
+    border-bottom: 1px solid var(--light-dark);
+    display: flex;
+    position: sticky;
+    top: 0;
+}
+
+.nav__link {
+    color: var(--gray);
+    text-decoration: none;
+    margin-right: 50px;
+    height: 100%;
+    cursor: pointer;
+    padding: 28px 0;
+}
+
+.nav__link--select {
+    color: var(--light);
+    font-weight: 500;
+    border-bottom: 3px solid var(--green);
+}
+
+.nav__link:hover {
+    color: var(--light);
+}

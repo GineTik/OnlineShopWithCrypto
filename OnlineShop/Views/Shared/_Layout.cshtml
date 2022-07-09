@@ -1,49 +1,55 @@
 ﻿<!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - OnlineShop</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" />
-</head>
-<body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">OnlineShop</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
-                    </ul>
-                    <partial name="_LoginPartial" />
-                </div>
-            </div>
-        </nav>
-    </header>
-    <div class="container">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
-    </div>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Shop</title>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2022 - OnlineShop - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+    <link rel="stylesheet" href="~/styles/css/style.min.css">
+</head>
+<body class="page">
+    <header class="header page__header container">
+        <div class="logo header__logo">
+            OnlineShop
         </div>
-    </footer>
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
-    @await RenderSectionAsync("Scripts", required: false)
+        <div class="search header__search">
+            <ion-icon class="search__icon" name="leaf-outline"></ion-icon>
+            <input class="search__input" type="text" placeholder="Введите название товара">
+            <ion-icon class="search__icon-search" name="search-outline"></ion-icon>
+        </div>
+        <div class="contacts header__contacts">
+            <ion-icon class="contacts__icon" name="mail-outline"></ion-icon>
+            <div class="contacts__inner">
+                <span class="contacts__type">Контакты:</span>
+                <span class="contacts__data">support@gmail.com</span>
+            </div>
+        </div>
+        <div class="auth header__auth">
+            <a href="" class="auth__link">Вход</a>
+            <a href="" class="auth__link">Реестрация</a>
+        </div>
+        <div class="basket header__basket button--green">
+            <ion-icon class="basket__icon" name="cart-outline"></ion-icon>
+            <span class="basket__text">Корзина</span>
+        </div>
+    </header>
+
+    <div class="preview page__preview">
+        @RenderSection("Preview", required: false)
+    </div>
+    <nav class="nav page__nav container">
+        <a class="nav__link nav__link--select">Телефоны</a>
+        <a class="nav__link">Планшеты</a>
+        <a class="nav__link">Ноутбуки</a>
+        <a class="nav__link">Аксесуары</a>
+    </nav>
+
+    @RenderBody()
+    
+    <footer class="footer page__footer"></footer>
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </body>
 </html>

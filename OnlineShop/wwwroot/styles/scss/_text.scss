@@ -1,0 +1,22 @@
+.title {
+    border-left: 3px solid var(--green);
+    color: var(--light);
+    padding-left: 10px;
+    margin-left: 7px;
+}
+
+h1.title {
+    font-size: 2rem;
+    margin-left: 30px;
+}
+h2.title {
+    font-size: 1.4rem;
+}
+h3.title {
+    font-size: 1rem;
+}
+
+.hint {
+    color: var(--gray);
+    font-size: .9rem;
+}

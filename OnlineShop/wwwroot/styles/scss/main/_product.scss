@@ -1,0 +1,37 @@
+.main__product {
+    width: 30%;
+    max-width: 329px;
+    margin: 10px;
+}
+
+.product {
+    background-color: var(--light-dark);
+    border-radius: 10px;
+    padding: 14px 16px 18px 20px;
+}
+
+.product__title {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+.product__tags {
+    color: var(--gray);
+    font-size: .9rem;
+    margin-top: 10px;
+}
+
+.product__footer {
+    margin-top: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.product__price {
+    font-size: 1.25rem;
+}
+
+.product__basket {
+    padding: 13px 19px;
+}

@@ -1,0 +1,18 @@
+[class*="button"] {
+    padding: 17px 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: .3s;
+    font-size: 1rem;
+}
+[class*="button"]:hover {
+    transform: scale(1.05);
+}
+
+.button--green {
+    background: var(--green-linear-gradient);
+    color: var(--light);
+}

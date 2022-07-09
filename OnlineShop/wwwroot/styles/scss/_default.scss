@@ -1,0 +1,23 @@
+* {
+    box-sizing: border-box;
+    font-family: Gilroy;
+    color: var(--light);
+}
+
+.page {
+    background-color: var(--dark);
+}
+
+.container {
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 10px;
+}
+
+@mixin posCenter {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
