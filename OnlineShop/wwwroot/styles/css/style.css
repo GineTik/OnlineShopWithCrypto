@@ -183,6 +183,21 @@ h3.title {
   width: 100%;
 }
 
+.form__row {
+  display: flex;
+  flex: 1 1 auto;
+}
+
+.form__row *:not(:last-child) {
+  margin-right: 10px;
+}
+
+.validation-field > span {
+  display: inline-block;
+  color: var(--red);
+  margin: 0 0 10px 5px;
+}
+
 .nav {
   padding: 0 80px;
   border-bottom: 1px solid var(--light-dark);
@@ -329,8 +344,6 @@ h3.title {
   border-left: 3px solid var(--light-dark);
   padding-left: 15px;
   margin-left: 15px;
-  display: flex;
-  align-items: center;
 }
 
 .auth__icon {
@@ -463,4 +476,5 @@ h3.title {
   --green-linear-gradient: linear-gradient(to left, #618967, #72A479);
   --gray: #CFCFCF;
   --light: #ffffff;
+  --red: #ec2121;
 }/*# sourceMappingURL=style.css.map */

@@ -30,3 +30,19 @@
 .form button {
     width: 100%;
 }
+
+.form__row {
+    display: flex;
+    flex: 1 1 auto;
+}
+.form__row *:not(:last-child) {
+    margin-right: 10px;
+}
+
+
+
+.validation-field > span {
+    display: inline-block;
+    color: var(--red);
+    margin: 0 0 10px 5px;
+}
