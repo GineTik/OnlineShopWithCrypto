@@ -11,5 +11,6 @@ namespace OnlineShop.DAL.Repository.Interfaces
         void DeleteItemAt(Tid id);
         T GetItem(Tid id);
         IQueryable<T> GetList(Expression<Func<T, bool>> predicate);
+        void SaveChanges();
     }
 }

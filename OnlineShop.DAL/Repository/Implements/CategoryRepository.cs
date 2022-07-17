@@ -22,11 +22,13 @@ namespace OnlineShop.DAL.Repository.Implements
         public void AddItem(Category item)
         {
             _db.Categories.Add(item);
+            SaveChanges();
         }
 
         public void DeleteItem(Category item)
         {
             _db.Categories.Remove(item);
+            SaveChanges();
         }
 
         public void DeleteItemAt(int id)
@@ -43,6 +45,11 @@ namespace OnlineShop.DAL.Repository.Implements
         public IQueryable<Category> GetList(Expression<Func<Category, bool>> predicate)
         {
             return _db.Categories.Where(predicate);
+        }
+
+        public void SaveChanges()
+        {
+            _db.SaveChanges();
         }
     }
 }

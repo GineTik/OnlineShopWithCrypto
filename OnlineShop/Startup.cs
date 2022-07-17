@@ -9,6 +9,8 @@ using Microsoft.Extensions.Hosting;
 
 using OnlineShop.DAL.EF;
 using OnlineShop.DAL.Entities;
+using OnlineShop.DAL.Repository.Implements;
+using OnlineShop.DAL.Repository.Interfaces;
 using System;
 
 namespace OnlineShop
@@ -30,12 +32,26 @@ namespace OnlineShop
                     Configuration.GetConnectionString("DefaultConnection")));
             services.AddDatabaseDeveloperPageExceptionFilter();
 
-            services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
-                .AddCookie(options =>
-                {
-                    options.LoginPath = "/Auth/Login";
-                    options.LogoutPath = "/Account/LogOut";
-                });
+            services.AddIdentity<User, IdentityRole>()
+                .AddEntityFrameworkStores<ApplicationDbContext>();
+
+            services.Configure<IdentityOptions>(options =>
+            {
+                options.Password.RequireDigit = false;
+                options.Password.RequiredLength = 5;
+                options.Password.RequireLowercase = false;
+                options.Password.RequireNonAlphanumeric = false;
+                options.Password.RequireUppercase = false;
+            });
+
+            //services.AddScoped<IUserRepository, UserRepository>();
+
+            //services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+            //    .AddCookie(options =>
+            //    {
+            //        options.LoginPath = "/Auth/Login";
+            //        options.LogoutPath = "/Account/LogOut";
+            //    });
 
             services.AddMvc();
         }

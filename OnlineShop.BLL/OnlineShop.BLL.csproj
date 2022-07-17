@@ -10,6 +10,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\OnlineShop.DAL\OnlineShop.DAL.csproj" />
+    <ProjectReference Include="..\OnlineShop.PL\OnlineShop.PL.csproj" />
   </ItemGroup>
 
 </Project>

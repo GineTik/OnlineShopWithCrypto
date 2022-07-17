@@ -19,11 +19,13 @@ namespace OnlineShop.DAL.Repository.Implements
         public void AddItem(BasketItem item)
         {
             _db.Basket.Add(item);
+            SaveChanges();
         }
 
         public void DeleteItem(BasketItem item)
         {
             _db.Basket.Remove(item);
+            SaveChanges();
         }
 
         public void DeleteItemAt(int id)
@@ -40,6 +42,11 @@ namespace OnlineShop.DAL.Repository.Implements
         public IQueryable<BasketItem> GetList(Expression<Func<BasketItem, bool>> predicate)
         {
             return _db.Basket.Where(predicate);
+        }
+
+        public void SaveChanges()
+        {
+            _db.SaveChanges();
         }
     }
 }

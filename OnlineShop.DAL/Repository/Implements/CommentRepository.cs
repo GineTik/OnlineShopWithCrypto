@@ -19,11 +19,13 @@ namespace OnlineShop.DAL.Repository.Implements
         public void AddItem(Comment item)
         {
             _db.Comments.Add(item);
+            SaveChanges();
         }
 
         public void DeleteItem(Comment item)
         {
             _db.Comments.Remove(item);
+            SaveChanges();
         }
 
         public void DeleteItemAt(int id)
@@ -40,6 +42,11 @@ namespace OnlineShop.DAL.Repository.Implements
         public IQueryable<Comment> GetList(Expression<Func<Comment, bool>> predicate)
         {
             return _db.Comments.Where(predicate);
+        }
+
+        public void SaveChanges()
+        {
+            _db.SaveChanges();
         }
     }
 }

@@ -2,6 +2,7 @@
 using OnlineShop.DAL.Entities;
 using OnlineShop.PL.ViewModel;
 using System;
+using System.Security.Claims;
 
 namespace OnlineShop.BLL.Factories
 {
@@ -12,7 +13,7 @@ namespace OnlineShop.BLL.Factories
             return new User()
             {
                 Email = model.Email,
-                PasswordHash = PasswordHasher.HashPassword(model.Password)
+                //PasswordHash = PasswordHasher.HashPassword(model.Password)
             };
         }
 
@@ -25,7 +26,7 @@ namespace OnlineShop.BLL.Factories
                 FirstName = model.FirstName,
                 LastName = model.LastName,
                 DateRegistration = DateTime.Now,
-                PasswordHash = PasswordHasher.HashPassword(model.Password)
+                //PasswordHash = PasswordHasher.HashPassword(model.Password)
             };
         }
     }

@@ -10,6 +10,8 @@
             <input class="input" placeholder="Пароль" asp-for="Password">
             <span asp-validation-for="Password" class="validation-field"></span>
             <button class="button--green">Войти</button>
+
+            <div asp-validation-summary="ModelOnly"></div>
         </form>
     </div>
 </main>

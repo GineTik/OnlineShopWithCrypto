@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+﻿<!DOCTYPE html> 
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
@@ -26,8 +26,15 @@
             </div>
         </div>
         <div class="auth header__auth">
-            <a asp-controller="Auth" asp-action="Login" class="auth__link">Вход</a>
-            <a asp-controller="Auth" asp-action="Registration" class="auth__link">Регистрация</a>
+            @if(Context.User.Claims.Count() != 0)
+            {
+                <a asp-controller="Auth" asp-action="Login" class="auth__link">Профиль</a>
+            }
+            else
+            {
+                <a asp-controller="Auth" asp-action="Login" class="auth__link">Вход</a>
+                <a asp-controller="Auth" asp-action="Registration" class="auth__link">Регистрация</a>    
+            }
         </div>
         <div class="basket header__basket button--green">
             <ion-icon class="basket__icon" name="cart-outline"></ion-icon>

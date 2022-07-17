@@ -3,6 +3,7 @@ namespace OnlineShop.DAL.Repository.Interfaces
 {
     public interface IUserRepository : IRepository<User, string>
     {
-        User GetItem(string userName, string passwordHash);
+        User GetItem(string email);
+        User GetItem(string email, string passwordHash);
     }
 }
